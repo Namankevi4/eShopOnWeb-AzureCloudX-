@@ -22,7 +22,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole();
 
 Microsoft.eShopWeb.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
-
+builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddCookieSettings();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

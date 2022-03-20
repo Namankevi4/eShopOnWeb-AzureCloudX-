@@ -32,6 +32,7 @@ builder.Services.AddEndpoints();
 
 //Use to force loading of appsettings.json of test project
 builder.Configuration.AddConfigurationFile();
+builder.Configuration.AddEnvironmentVariables();
 builder.Logging.AddConsole();
 
 Microsoft.eShopWeb.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
@@ -72,16 +73,8 @@ builder.Services.AddAuthentication(config =>
 });
 
 const string CORS_POLICY = "CorsPolicy";
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: CORS_POLICY,
-                      builder =>
-                      {
-                          builder.WithOrigins(baseUrlConfig.WebBase.Replace("host.docker.internal", "localhost").TrimEnd('/'));
-                          builder.AllowAnyMethod();
-                          builder.AllowAnyHeader();
-                      });
-});
+
+builder.Services.AddCors(options => options.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
 builder.Services.AddControllers();
 
