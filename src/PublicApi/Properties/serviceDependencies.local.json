@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/finalTaskKeyVault",
+      "type": "secrets.keyVault",
+      "connectionId": "AzureSqlDb"
+    },
+    "mssql1": {
+      "secretStore": "AzureKeyVault",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/finaltaskazsqldbdbserver/databases/FinalTaskAZSqlDB",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:IdentityConnection"
+    }
+  }
+}

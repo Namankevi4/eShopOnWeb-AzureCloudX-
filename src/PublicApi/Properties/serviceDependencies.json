@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets",
+      "connectionId": "AzureSqlDb"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:IdentityConnection"
+    }
+  }
+}

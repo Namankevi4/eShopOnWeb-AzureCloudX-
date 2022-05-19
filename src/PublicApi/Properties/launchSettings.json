@@ -14,7 +14,9 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AzureSqlDb": "https://finaltaskkeyvault.vault.azure.net/",
+        "AZURE_USERNAME": "Aliaksandr_Namankevich@epam.com"
       }
     },
     "PublicApi": {
@@ -22,7 +24,9 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AzureSqlDb": "https://finaltaskkeyvault.vault.azure.net/",
+        "AZURE_USERNAME": "Aliaksandr_Namankevich@epam.com"
       },
       "applicationUrl": "https://localhost:5099;http://localhost:5098"
     }

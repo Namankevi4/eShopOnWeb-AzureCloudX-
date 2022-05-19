@@ -25,6 +25,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MinimalApi.Endpoint.Configurations.Extensions;
 using MinimalApi.Endpoint.Extensions;
+using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -75,12 +76,10 @@ const string CORS_POLICY = "CorsPolicy";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: CORS_POLICY,
-                      builder =>
-                      {
-                          builder.WithOrigins(baseUrlConfig.WebBase.Replace("host.docker.internal", "localhost").TrimEnd('/'));
-                          builder.AllowAnyMethod();
-                          builder.AllowAnyHeader();
-                      });
+        builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
 });
 
 builder.Services.AddControllers();
